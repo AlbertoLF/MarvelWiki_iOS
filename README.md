@@ -18,4 +18,14 @@ Encriptar los secrets y tener un archivo seguro para claves sensibles.
 
 ---
 
+## Technical
+
+La App se ha desarrollado con una arquitectura que mezcla conceptos de VIPER con patrón Coordinator y Repository.
+
+La capa de **presentación** está formada por ViewController, Presenter y Coordinator
+
+La capa de **dominio** está formada por **Interactors**, que aglutina casos de usos de una misma "funcionalidad" y por **Repositories**, que se encargan de obtener los datos de distintas fuentes.
+
+La capa de **Data** está formada por entidades y configuraciones para DataSources. Un cambio necesario sería hacer un conector de API para Alamofire que se pueda inyectar en los repositories, para así poder testear y no depender de implementaciones en la capa de dominio.
+
 ### Author: Alberto Luque Fernández
